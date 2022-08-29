@@ -13,7 +13,7 @@ public class RiskyPersonArea implements Serializable {
     private String status;
     private double lat;
     private double lon;
-    private int infected_count;
-    private int closed_count;
+    private int infectedCount;
+    private int closedCount;
     private int type;
 }

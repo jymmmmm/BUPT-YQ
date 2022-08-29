@@ -39,39 +39,39 @@ public class PolyAreaService {
     RiskyAreaService riskyAreaService;
 
     public List<PolyList> getpolyArea(){
-        List<PolyList> poly_lists = new ArrayList<>();
+        List<PolyList> polyLists = new ArrayList<>();
         tableService.test_table();
-        List<PolyString> polyarea = polyAreaMapper.getAllArea();
-        if(polyarea.size() == 0){
+        List<PolyString> polyArea = polyAreaMapper.getAllArea();
+        if(polyArea.size() == 0){
             List<RiskyPersonArea> area=riskyAreaService.getRiskyArea();
             HashMap<Location,Integer> map = new HashMap<>();
-            int poly_id=1;
+            int polyId=1;
             for(RiskyPersonArea a : area){
                 Location location = new Location();
                 int x = (int)a.getLat();
                 int y = (int)a.getLon();
-                String s=judge_level(a.getInfected_count(),a.getClosed_count());
+                String s=judge_level(a.getInfectedCount(),a.getClosedCount());
                 location.setLon(y).setLat(x).setStatus(s);
                 map.put(location,0);
             }
 
             for(Location key:map.keySet())
             {
-                PolyList poly_list=new PolyList().setList_data(generate_location(key));
-                poly_list.setId(poly_id);
-                poly_list.setStatus(key.getStatus());
-                tableService.insert_info_table(poly_list);
-                poly_lists.add(poly_list);
-                poly_id++;
+                PolyList polyList=new PolyList().setList_data(generate_location(key));
+                polyList.setId(polyId);
+                polyList.setStatus(key.getStatus());
+                tableService.insert_info_table(polyList);
+                polyLists.add(polyList);
+                polyId++;
             }
         }
         else{
-            for(PolyString a: polyarea){
+            for(PolyString a: polyArea){
                 PolyList pl = conversion.ps_to_pl(a);
-                poly_lists.add(pl);
+                polyLists.add(pl);
             }
         }
-        return poly_lists;
+        return polyLists;
     }
 
 }
