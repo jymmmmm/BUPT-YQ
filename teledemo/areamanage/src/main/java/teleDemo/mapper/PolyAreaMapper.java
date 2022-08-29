@@ -30,5 +30,7 @@ public interface PolyAreaMapper {
     @Update("update polyarea set status=#{poly_string.status},str_data=#{poly_string.str_data} where id=#{poly_string.id} limit #{poly_string.id};")
     void update_info_table(@Param("poly_string") PolyString poly_string) throws RuntimeException;
 
+    @Insert("CREATE TABLE IF NOT EXISTS polyarea (id int not null,status varchar(20) not null,str_data varchar(255) not null);")
+    void createInfoTable();
 
 }
