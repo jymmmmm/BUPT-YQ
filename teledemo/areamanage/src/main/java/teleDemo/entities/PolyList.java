@@ -1,9 +1,9 @@
 package teleDemo.entities;
 
-import javafx.util.Pair;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import teleDemo.util.Pair;
 
 import java.util.List;
 

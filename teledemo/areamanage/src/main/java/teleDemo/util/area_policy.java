@@ -1,6 +1,5 @@
 package teleDemo.util;
 
-import javafx.util.Pair;
 import teleDemo.entities.Location;
 
 import java.util.ArrayList;

@@ -7,7 +7,6 @@
  */
 package teleDemo.util;
 
-import javafx.util.Pair;
 import teleDemo.entities.PolyList;
 import teleDemo.entities.PolyPost;
 import teleDemo.entities.PolyString;
