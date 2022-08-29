@@ -14,10 +14,10 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Accessors(chain = true)
-public class poly_string extends poly{
+public class PolyString extends Poly {
     private String str_data;
 
-    public poly_string(int id, String status, String poly_to_string) {
+    public PolyString(int id, String status, String poly_to_string) {
         this.setStr_data(poly_to_string);
         this.setId(id);
         this.setStatus(status);

@@ -8,7 +8,7 @@ import java.sql.Date;
 
 @Data
 @Accessors(chain = true)
-public class riskyPersonArea implements Serializable {
+public class RiskyPersonArea implements Serializable {
     private int id;
     private String status;
     private double lat;

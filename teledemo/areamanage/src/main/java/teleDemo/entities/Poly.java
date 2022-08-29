@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 
 @Data
-public class poly implements Serializable {
+public class Poly implements Serializable {
     private int id;
     private String status;
 }

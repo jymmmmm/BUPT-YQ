@@ -8,11 +8,10 @@
 package teleDemo.util;
 
 import javafx.util.Pair;
-import teleDemo.entities.poly_list;
-import teleDemo.entities.poly_post;
-import teleDemo.entities.poly_string;
+import teleDemo.entities.PolyList;
+import teleDemo.entities.PolyPost;
+import teleDemo.entities.PolyString;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -56,16 +55,16 @@ public class conversion {
         return poly;
     }
 
-    public static poly_string pl_to_ps(poly_list pl){
-        return new poly_string(pl.getId(),pl.getStatus(),poly_to_string(pl.getList_data()));
+    public static PolyString pl_to_ps(PolyList pl){
+        return new PolyString(pl.getId(),pl.getStatus(),poly_to_string(pl.getList_data()));
     }
 
-    public static poly_list ps_to_pl(poly_string ps){
-        return new poly_list(ps.getId(),ps.getStatus(),string_to_poly(ps.getStr_data()));
+    public static PolyList ps_to_pl(PolyString ps){
+        return new PolyList(ps.getId(),ps.getStatus(),string_to_poly(ps.getStr_data()));
     }
 
-    public static poly_list pp_to_pl(poly_post pp){
-        return new poly_list(pp.getId(),pp.getStatus(),post_to_list(pp.getList_data()));
+    public static PolyList pp_to_pl(PolyPost pp){
+        return new PolyList(pp.getId(),pp.getStatus(),post_to_list(pp.getList_data()));
     }
 
     public static void main(String[] args) {

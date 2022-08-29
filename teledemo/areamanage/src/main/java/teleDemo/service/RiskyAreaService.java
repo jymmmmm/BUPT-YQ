@@ -3,27 +3,25 @@ package teleDemo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import teleDemo.entities.Location;
-import teleDemo.entities.poly;
-import teleDemo.entities.riskyPersonArea;
-import teleDemo.mapper.riskyAreaMapper;
+import teleDemo.entities.RiskyPersonArea;
+import teleDemo.mapper.RiskyAreaMapper;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 @Service
-public class riskyAreaService {
+public class RiskyAreaService {
     @Autowired
-    riskyAreaMapper riskyAreaMapper;
+    RiskyAreaMapper riskyAreaMapper;
 
-    public List<riskyPersonArea> getRiskyArea(){
-        List<riskyPersonArea> area = riskyAreaMapper.getAllArea();
+    public List<RiskyPersonArea> getRiskyArea(){
+        List<RiskyPersonArea> area = riskyAreaMapper.getAllArea();
         HashMap<Location,Integer> map = new HashMap<>();
         HashMap<Location,Integer> repeat_map=new HashMap<>();
         HashMap<Location,Integer> count_infected_Map = new HashMap<>();
         HashMap<Location,Integer> count_closed_Map = new HashMap<>();
-        for(riskyPersonArea a : area){
+        for(RiskyPersonArea a : area){
             Location location = new Location();
             int x = (int)a.getLat();
             int y = (int)a.getLon();
@@ -47,12 +45,12 @@ public class riskyAreaService {
                 count_closed_Map.put(location,1);
             }
         }
-        List<riskyPersonArea> numArea = new ArrayList<>();
+        List<RiskyPersonArea> numArea = new ArrayList<>();
         Location temp_location=new Location();
         Location stored_location=new Location();
         for (Location key:map.keySet() ){
             if(!repeat_map.containsKey(key)){
-            riskyPersonArea r = new riskyPersonArea().setLat(key.getLat())
+            RiskyPersonArea r = new RiskyPersonArea().setLat(key.getLat())
                     .setLon(key.getLon())
                     .setId(0)
                     .setStatus(null);
