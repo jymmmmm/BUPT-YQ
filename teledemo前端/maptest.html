@@ -235,8 +235,10 @@
 
     function editClick(){
         current_poly = poly_select
-        polyEditor.setTarget(current_poly);
-        polyEditor.open();
+        if(current_poly!==undefined){
+            polyEditor.setTarget(current_poly);
+            polyEditor.open();
+        }
     }
 
     function endEdit(){
